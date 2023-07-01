@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style/reset.css"/>
+  <link rel="stylesheet" href="style/board.css"/>
+  <title>Exchange Rate The Game</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="top">
+      <div class="players">
+        <div class="player-box">
+          <div class="name-bar">
+            <span>name</span>
+          </div>
+          <div class="player-stats">
+            <ul>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+            </ul>
+            <span class="player-money">100$</span>
+          </div>
+          <div class="showPhases">
+            <div class="showPhase">
+              <span></span>
+            </div>
+            <div class="showPhase">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="player-box">
+          <div class="name-bar">
+            <span>name</span>
+          </div>
+          <div class="player-stats">
+            <ul>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+            </ul>
+            <span class="player-money">100$</span>
+          </div>
+          <div class="showPhases">
+            <div class="showPhase">
+              <span></span>
+            </div>
+            <div class="showPhase">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="player-box">
+          <div class="name-bar">
+            <span>name</span>
+          </div>
+          <div class="player-stats">
+            <ul>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+              <li>
+                <span>0</span>
+                <div class="red"></div>
+              </li>
+            </ul>
+            <span class="player-money">100$</span>
+          </div>
+          <div class="showPhases">
+            <div class="showPhase">
+              <span></span>
+            </div>
+            <div class="showPhase">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game">
+      <div class="board">
+        <div class="head-title">
+          <span>Market Value Board</span>
+        </div>
+        <div class="rates">
+          <div class="red-rate rate"></div>
+          <div class="green-rate rate"></div>
+          <div class="blue-rate rate"></div>
+          <div class="grid-rate">
+            <span>$10</span>
+          </div>
+          <div class="grid-rate">
+            <span>$20</span>
+          </div>
+          <div class="grid-rate">
+            <span>$30</span>
+          </div>
+          <div class="grid-rate">
+            <span>$40</span>
+          </div>
+          <div class="grid-rate">
+            <span>$50</span>
+          </div>
+          <div class="grid-rate">
+            <span>$60</span>
+          </div>
+          <div class="grid-rate">
+            <span>$70</span>
+          </div>
+          <div class="grid-rate">
+            <span>$80</span>
+          </div>
+          <div class="grid-rate">
+            <span>$90</span>
+          </div>
+        </div>
+        <div class="round-counter">
+          <span>Round</span>
+          <div class="round">
+            <span>1</span>
+          </div>
+          <div class="round">
+            <span>2</span>
+          </div>
+          <div class="round">
+            <span>3</span>
+          </div>
+          <div class="round">
+            <span>4</span>
+          </div>
+          <div class="round">
+            <span>5</span>
+          </div>
+        </div>
+      </div>  
+      <div class="pop-up">
+        <ul>
+          <li>
+            <label for="phase-1">Phase 1</label>
+            <select name="phase-1" id="phase-1" class="phase">
+              <option value="red">red</option>
+              <option value="green">green</option>
+              <option value="blue">blue</option>
+            </select>
+          </li>
+          <li>
+            <label for="phase-2">Phase 2</label>
+            <select name="phase-2" id="phase-2" class="phase">
+              <option value="buy">buy</option>
+              <option value="sell">sell</option>
+            </select>
+            <select name="phase-2-count" id="phase-2-count" class="phase">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </li>
+          <li>
+            <label for="phase-3">Phase 3</label>
+            <select name="phase-3" id="phase-3" class="phase">
+              <option value="red +1">red +1</option>
+              <option value="green +1">green +1</option>
+              <option value="blue +1">blue +1</option>
+              <option value="red -1">red -1</option>
+              <option value="green -1">green -1</option>
+              <option value="blue -1">blue -1</option>
+            </select>
+          </li>
+        </ul>
+        <button id="confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script type="module" src="scripts/game.js"></script>
+</body>
+</html>

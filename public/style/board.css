@@ -1,0 +1,222 @@
+body {
+    perspective: 20rem;
+    overflow: hidden;
+}
+/* WRAPPER */
+.wrapper {
+    padding: 2vw;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    transform: scale(1.1) rotateX(5deg);
+}
+/* TOP-PLAYERS */
+.players {
+    margin: 0px 0px 20px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+.player-box {
+    position: relative;
+    border: 1px solid darkblue;
+    border-top: none;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 80px;
+    background-color: rgb(51, 51, 51);
+}
+.player-active {
+    border-color: aqua;
+}
+.name-bar {
+    border-top: 1px solid gold;
+    border-bottom: 1px solid gold;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 30px;
+    background-color: rgb(50, 105, 0);
+    box-shadow: 0px 3px 7px;
+}
+.name-bar span {
+    margin-left: 10px;
+    color: white;
+}
+.player-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.player-stats ul {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.player-stats ul li {
+    width: 20px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    color: white;
+}
+.showPhases {
+    visibility: hidden;
+    display: flex;
+    position: absolute;
+    left: 5px;
+    top: 100%;
+    font-size: 15px;
+    color: white;
+}
+.showPhase {
+    padding: 1.5px;
+    background-color: black;
+    border: 1px solid white;
+}
+.player-stats ul li:nth-child(1) {
+    background-color: red;
+}
+.player-stats ul li:nth-child(2) {
+    background-color: green;
+}
+.player-stats ul li:nth-child(3) {
+    background-color: blue;
+}
+.player-money {
+    color: white;
+}
+/* GAME BOARD */
+@keyframes moveRates {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+.move-rates {
+    animation: moveRates 1s linear;
+}
+.game {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+}
+.head-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size: 25px;
+    color: white;
+}
+.board {
+    padding: 10px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #242424; 
+    box-shadow: 0px 5px 10px;
+}
+.rates {
+    position: relative;
+    display: flex;
+}
+.rate {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.red-rate {
+    background-color: red;
+    top: 10%;
+    left: 15px;
+}
+.green-rate {
+    background-color: green;
+    top: 20%;
+    left: 15px;
+}
+.blue-rate {
+    background-color: blue;
+    top: 30%;
+    left: 15px;
+}
+.grid-rate {
+    box-sizing: border-box;
+    border:1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95px;
+    height: 250px;
+    font-size: 45px;
+    color: #fff;
+    
+}
+.round-counter {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(0, 35, 60);
+    color: white;
+}
+.round {
+    margin-left: 20px;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid rgba(65, 65, 65, 0.425);
+    color: white;
+}
+.round span {
+    position: absolute;
+    top: 20px;
+    right: -3px;
+}
+.pop-up {
+    display: none;
+}
+.pop-up ul {
+    display: flex;
+    flex-direction: column;
+}
+.pop-up li {
+    color: white;
+    margin: 15px;
+}
+#confirm {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+@media screen and (max-width: 1115px) and (min-width: 600px) {
+    .wrapper {
+        transform: scale(1) rotateX(0deg);
+    }
+    .grid-rate {
+        width: 70px;
+        height: 190px;
+        font-size: 25px;
+    }
+    .red-rate {
+        top: 5%;
+    }
+    .green-rate {
+        top: 20%;
+    }
+    .blue-rate {
+        top: 35%;
+    }
+  }

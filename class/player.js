@@ -6,7 +6,6 @@ class Player {
         this.red = card.red;
         this.green = card.green;
         this.blue = card.blue;
-        this.status = false;
     }
     getName() {
         return this.name;
@@ -22,12 +21,6 @@ class Player {
     }
     getBlue () {
         return this.blue;
-    }
-    getStatus () {
-        return this.status;
-    }
-    setStatus (currentStatus) {
-        this.stats = currentStatus;
     }
     addMoney(amount) {
         this.money += amount;

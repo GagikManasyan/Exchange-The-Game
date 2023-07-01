@@ -122,7 +122,8 @@ socket.on('roundCounter',(roundCount) => {
 })
 
 socket.on('gameOver',(winner)=> {
-  const result = `Game Over! The winner is ${winner.getName()} with $${maxMoney}.`;
+  console.log(winner);
+  const result = `Game Over! The winner is ${winner.name} with $${winner.money}.`;
   window.alert(result);
   button.removeEventListener("click", selectPhases);
 })

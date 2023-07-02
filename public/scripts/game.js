@@ -18,7 +18,6 @@ socket.on('test',(test) => {
 
 socket.on('updatePlayers',(backendPlayers) => {
   players = [...backendPlayers];
-  console.log(players);
 })
 
 socket.on("ready", () => {
@@ -85,7 +84,6 @@ socket.on('adjustMarket',(market) => {
 })
 
 socket.on('updatePlayerStats',(backendPlayers) => {
-  console.log(backendPlayers);
   for (let i = 0; i < backendPlayers.length; i++) {
     players[i] = backendPlayers[i];
   }
@@ -93,7 +91,6 @@ socket.on('updatePlayerStats',(backendPlayers) => {
 })
 
 socket.on('showPhases',(phases) => {
-  console.log(phases);
   const phasebox = document.getElementsByClassName('showPhases');
   for (let i = 0; i < phasebox.length; i++) {
     let showPhase = phasebox[i].querySelectorAll('.showPhase');
@@ -118,7 +115,6 @@ socket.on('roundCounter',(roundCount) => {
 })
 
 socket.on('gameOver',(winner)=> {
-  console.log(winner);
   const result = `Game Over! The winner is ${winner.name} with $${winner.money}.`;
   window.alert(result);
   button.removeEventListener("click", selectPhases);

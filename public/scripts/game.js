@@ -1,25 +1,23 @@
+const { username, room } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true,
+});
 const socket = io();
-
+socket.emit('joinRoom',  username, room);
 
 const button = document.getElementById("confirm");
 const playerBox = document.getElementsByClassName("player-box");
 const roundBox = document.getElementsByClassName("round");
 const popUp = document.querySelector('.pop-up');
 
-const players = [];
+let players = [];
 let currentTurn = 0;
 
+socket.on('test',(test) => {
+  console.log(test);
+})
+
 socket.on('updatePlayers',(backendPlayers) => {
-  for (let i = 0; i < backendPlayers.length; i++) {
-    if (!(players.some(e => e.id === backendPlayers[i].id))) {
-      players.push(backendPlayers[i]);
-    }
-  }
-  for (let i = 0; i < players.length; i++) {
-    if(players.length !== backendPlayers.length && (!backendPlayers.some((e) => e === players[i]))) {
-      players.splice(i,1);
-    }
-  }
+  players = [...backendPlayers];
   console.log(players);
 })
 
@@ -55,9 +53,7 @@ socket.on('turn', (turn) => {
 });
 
 function selectPhases() {
-  console.log(socket.id);
   if (socket.id === players[currentTurn].id) {
-    console.log('hello');
     let phaseSelect = document.getElementsByClassName("phase");
     let playerPhase = {
       phase1: {
@@ -71,8 +67,8 @@ function selectPhases() {
         influencedProperty: phaseSelect[3].value.slice(0,-3),
         influence: phaseSelect[3].value.slice(-2),
       }
-    }
-    socket.emit('buttonClick',playerPhase);
+    };
+    socket.emit('buttonClick',players[2].room,playerPhase);
   }
 }
 
@@ -86,7 +82,6 @@ socket.on('adjustMarket',(market) => {
   redRate.style.transform = `translate(${coordinateRed}px)`;
   greenRate.style.transform = `translate(${coordinateGreen}px)`;
   blueRate.style.transform = `translate(${coordinateBlue}px)`;
-
 })
 
 socket.on('updatePlayerStats',(backendPlayers) => {
@@ -98,6 +93,7 @@ socket.on('updatePlayerStats',(backendPlayers) => {
 })
 
 socket.on('showPhases',(phases) => {
+  console.log(phases);
   const phasebox = document.getElementsByClassName('showPhases');
   for (let i = 0; i < phasebox.length; i++) {
     let showPhase = phasebox[i].querySelectorAll('.showPhase');

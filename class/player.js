@@ -1,7 +1,8 @@
 class Player {
-    constructor(card, id) {
+    constructor(card, name, id, room) {
         this.id = id;
-        this.name = card.name;
+        this.room = room;
+        this.name = name;
         this.money = card.money;
         this.red = card.red;
         this.green = card.green;

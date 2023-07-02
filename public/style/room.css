@@ -1,0 +1,54 @@
+body {
+    background-color: #121212;
+}
+
+.join-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: rgba(85, 195, 0, 0.995);
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: black;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.join-main {
+	padding: 30px 40px;
+	background-color: #242424;
+}
+
+.join-main p {
+	margin-bottom: 20px;
+}
+
+.join-main .form-control {
+	margin-bottom: 20px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.join-main input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main select {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
+.join-main .btn {
+	margin-top: 20px;
+	width: 100%;
+}

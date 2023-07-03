@@ -211,7 +211,7 @@ body {
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
     body {
-        background: none;
+        /* background: none; */
     }
     body:after {
         content:"";

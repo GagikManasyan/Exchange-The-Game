@@ -263,6 +263,7 @@ body {
         font-size: 50px;
     }
     .phase-select {
+        display: flex;
         bottom: 1px;
     }
 }

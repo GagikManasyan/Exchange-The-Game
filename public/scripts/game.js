@@ -15,7 +15,7 @@ socket.on("redirectToIndex", () => {
 const button = document.getElementById("confirm");
 const playerBox = document.getElementsByClassName("player-box");
 const roundBox = document.getElementsByClassName("round");
-const popUp = document.querySelector('.pop-up');
+const btn = document.getElementById('confirm');
 
 let players = [];
 let currentTurn = 0;
@@ -30,7 +30,7 @@ socket.on("ready", () => {
 });
 
 function start() {
-  popUp.style.display = 'block';
+  btn.style.display = 'block';
   button.addEventListener("click", selectPhases);
   playerBox[0].classList.add("player-active");
   roundBox[0].style.borderBottomColor = "red";

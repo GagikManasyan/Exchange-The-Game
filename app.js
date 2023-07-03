@@ -91,30 +91,35 @@ const Player = require("./class/player.js");
 shuffleCards();
 
 io.on("connection", (socket) => {
-  socket.on("joinRoom", (username,userRoom) => {
+  socket.on("joinRoom", (username, userRoom) => {
+    if (rooms[userRoom] && rooms[userRoom].players.length >= 3) {
+      socket.emit("roomFull");
+      return;
+    }
     let player = new Player(cards[cardAssign++], username, socket.id, userRoom);
     if (!rooms[player.room]) {
       rooms[player.room] = {
         players: [],
         playerPhases: [],
         market: {
-          red:10,
-          green:10,
-          blue:10
+          red: 10,
+          green: 10,
+          blue: 10
         },
         currentTurn: 0,
         roundCount: 0
-      }; 
+      };
     }
     rooms[player.room].players.push(player);
     socket.join(player.room);
     console.log(`user ${player.name} joined the ${player.room}`);
     io.to(player.room).emit("updatePlayers", rooms[player.room].players);
     if (isReady(player.room)) {
-      console.log('ready')
+      console.log('ready');
       io.to(player.room).emit("ready");
     }
   });
+
   socket.on("disconnect", (reason) => {
     for (let room in rooms) {
       const index = rooms[room].players.findIndex(player => player.id === socket.id);
@@ -125,6 +130,7 @@ io.on("connection", (socket) => {
       }
     }
   });
+
   socket.on("buttonClick", (playerRoom, playerPhase) => {
     rooms[playerRoom].playerPhases.push(playerPhase);
     changeTurn(playerRoom);

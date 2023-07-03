@@ -3,7 +3,9 @@ const { username, room } = Qs.parse(location.search, {
 });
 const socket = io();
 socket.emit('joinRoom',  username, room);
-
+socket.on("roomFull", () => {
+  window.alert("The room is already full. You cannot join at the moment.");
+});
 const button = document.getElementById("confirm");
 const playerBox = document.getElementsByClassName("player-box");
 const roundBox = document.getElementsByClassName("round");
@@ -11,10 +13,6 @@ const popUp = document.querySelector('.pop-up');
 
 let players = [];
 let currentTurn = 0;
-
-socket.on('test',(test) => {
-  console.log(test);
-})
 
 socket.on('updatePlayers',(backendPlayers) => {
   players = [...backendPlayers];

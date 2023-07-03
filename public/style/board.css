@@ -240,7 +240,7 @@ body {
     }
     .grid-rate {
         width: 70px;
-        height: 140px;
+        height: 180px;
         font-size: 25px;
     }
     .red-rate {
@@ -253,8 +253,8 @@ body {
         top: 35%;
     }
     .phaseBox {
-        width: 80px;
-        height: 75px;
+        width: 85px;
+        height: 90px;
     }
     .phase-text {
         font-size: 15px;

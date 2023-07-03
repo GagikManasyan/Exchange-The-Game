@@ -2,11 +2,16 @@ html {
     perspective: 20rem;
 }
 body {
-    overflow: hidden;
+    width:100%;
+    height:100%;
     background-image: url(../images/background.jpg);
-    background-size: 100%;
     background-position: center;
     transform: scale(1) rotateX(5deg); 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -ms-content-zooming: none;
+    overflow: hidden;
 }
 /* WRAPPER */
 .wrapper {

@@ -206,10 +206,10 @@ body {
 }
 @media screen and (max-width: 1115px) and (min-width: 600px) {
     body {
+        margin: 0;
+        padding: 0;
         background-image: url(../images/background.jpg);
         background-position: center;
-        background-size: contain;
-        background-repeat: repeat;
     }
     .grid-rate {
         width: 70px;

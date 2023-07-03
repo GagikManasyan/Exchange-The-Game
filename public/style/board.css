@@ -206,9 +206,8 @@ body {
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
     body {
-        background-image: url(../images/background-mobile.jpg);
-        background-size: cover;
-        background-position: center;
+        background-image: none;
+        background-color: rgb(35, 35, 35);
     }
     .head-title {
         height: 45px;

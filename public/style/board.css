@@ -5,7 +5,7 @@ body {
     overflow: hidden;
     background-image: url(../images/background.jpg);
     background-position: center;
-    transform: scale(1.1) rotateX(5deg); 
+    transform: scale(1) rotateX(5deg); 
 }
 /* WRAPPER */
 .wrapper {
@@ -203,7 +203,7 @@ body {
     border: none;
     border-radius: 5px;
 }
-@media screen and (max-width: 1115px) and (min-width: 600px) {
+@media screen and (max-width: 1115px) and (min-width: 350px) {
     html,body{
         perspective: none;
         overflow-x: hidden;

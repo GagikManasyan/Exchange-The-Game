@@ -3,12 +3,12 @@ html {
 }
 body {
     background-image: url(../images/background.jpg);
-    background-position: center;
     transform: scale(1) rotateX(5deg); 
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
     -ms-content-zooming: none;
+    background-position: center, center;
     overflow: hidden;
 }
 /* WRAPPER */
@@ -208,11 +208,9 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
-    html {
-        background-image: url(../images/background.jpg);
-    }
     body {
-        background-image: url(../images/background.jpg);
+        width: 100vw;
+        height: 100vh;
         background-size: cover;
         background-repeat: repeat;
     }

@@ -2,8 +2,6 @@ html {
     perspective: 20rem;
 }
 body {
-    width:100%;
-    height:100%;
     background-image: url(../images/background.jpg);
     background-position: center;
     transform: scale(1) rotateX(5deg); 
@@ -210,19 +208,13 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
-    body {
-        /* background: none; */
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
     }
-    body:after {
-        content:"";
-        position:fixed;
-        z-index:-1;
-        left:0;
-        top:0;
-        right:0;
-        bottom:0;
-        background:url('../images/background.jpg') no-repeat;
+    body {
+        background-image: url(../images/background.jpg);
         background-size: cover;
+        background-repeat: repeat;
     }
     .head-title {
         height: 45px;

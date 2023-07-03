@@ -207,7 +207,7 @@ body {
 @media screen and (max-width: 1115px) and (min-width: 350px) {
     body {
         background-image: none;
-        background-color: rgb(35, 35, 35);
+        background-color: rgb(19 19 19);
     }
     .head-title {
         height: 45px;

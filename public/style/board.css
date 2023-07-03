@@ -1,13 +1,16 @@
-body {
+html {
     perspective: 20rem;
+}
+body {
     overflow: hidden;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    transform: scale(1.1) rotateX(5deg); 
 }
 /* WRAPPER */
 .wrapper {
-    padding: 2vw;
-    background-image: url(../images/background.jpg);
-    background-position: center;
-    transform: scale(1.1) rotateX(5deg);
+    padding: 2vw; 
+   
 }
 /* TOP-PLAYERS */
 .players {
@@ -202,9 +205,6 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 600px) {
-    .wrapper {
-        transform: scale(1) rotateX(0deg);
-    }
     .grid-rate {
         width: 70px;
         height: 190px;

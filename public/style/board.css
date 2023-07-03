@@ -209,12 +209,7 @@ body {
         perspective: none;
     }
     body {
-        width: 100%;
-        background-size: contain;
-        background-repeat: repeat;
-        margin: 0;
-        /* padding: 0px 50px 0px 50px; */
-        transform: none; 
+        background-size: cover;
     }
     .head-title {
         height: 45px;

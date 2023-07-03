@@ -216,9 +216,8 @@ body {
         overflow-x: hidden;
     }
     body {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        background: none;
+        background-color: rgb(20, 20, 20);
     }
     .head-title {
         height: 45px;

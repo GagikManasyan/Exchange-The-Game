@@ -209,11 +209,9 @@ body {
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
     body {
-        width: 100vw;
-        height: 100vh;
-        background-image: url(../images/background-4k.jpg);
         background-size: cover;
-        background-repeat: repeat;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .head-title {
         height: 45px;

@@ -205,11 +205,11 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
-    html,body{
-        background-color: red;
+    html {
         perspective: none;
     }
     body {
+        background-color: red;
         margin: 0;
         padding: 0;
         transform: none; 

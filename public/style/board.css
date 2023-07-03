@@ -205,9 +205,6 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
-    html {
-        perspective: none;
-    }
     body {
         background-size: cover;
     }

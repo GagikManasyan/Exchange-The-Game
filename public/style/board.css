@@ -2,14 +2,8 @@ html {
     perspective: 20rem;
 }
 body {
-    background-image: url(../images/background.jpg);
-    transform: scale(1) rotateX(5deg); 
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    -ms-content-zooming: none;
-    background-position: center, center;
-    overflow: hidden;
+    background-color: rgb(20, 20, 20);
+    transform: scale(1) rotateX(5deg);
 }
 /* WRAPPER */
 .wrapper {
@@ -208,17 +202,6 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-    body {
-        background: none;
-        background-color: rgb(20, 20, 20);
-    }
     .head-title {
         height: 45px;
         font-size: 20px;

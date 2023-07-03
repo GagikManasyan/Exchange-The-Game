@@ -206,7 +206,7 @@ body {
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
     body {
-        background-image: url(../images/background-mobile.jpg);
+        background-image: url(../images/background.jpg);
         background-size: cover;
         background-repeat: repeat;
     }

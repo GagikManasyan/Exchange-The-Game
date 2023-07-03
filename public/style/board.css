@@ -209,10 +209,10 @@ body {
         perspective: none;
     }
     body {
-        background-size: cover;
+        background-size: contain;
         background-repeat: repeat;
         margin: 0;
-        padding: 0;
+        padding: auto;
         transform: none; 
     }
     .head-title {

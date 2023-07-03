@@ -118,7 +118,6 @@ io.on("connection", (socket) => {
       console.log(`user ${player.name} joined the ${player.room}`);
       io.to(player.room).emit("updatePlayers", rooms[player.room].players);
       if (isReady(player.room)) {
-        console.log("ready");
         io.to(player.room).emit("ready");
       }
     }
@@ -135,9 +134,11 @@ io.on("connection", (socket) => {
         );
         const removedPlayer = rooms[room].players.splice(index, 1)[0];
         io.to(removedPlayer.room).emit("updatePlayers", rooms[room].players);
-        delete rooms[room];
-        io.to(room).emit("redirectToIndex");
       }
+      const removedPlayer = rooms[room].players.splice(index, 1)[0];
+      io.to(removedPlayer.room).emit("updatePlayers", rooms[room].players);
+      delete rooms[room];
+      io.to(room).emit("redirectToIndex");
     }
   });
 

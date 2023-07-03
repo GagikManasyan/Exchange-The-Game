@@ -3,9 +3,15 @@ const { username, room } = Qs.parse(location.search, {
 });
 const socket = io();
 socket.emit('joinRoom',  username, room);
+
 socket.on("roomFull", () => {
   window.alert("The room is already full. You cannot join at the moment.");
 });
+
+socket.on("redirectToIndex", () => {
+  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
+});
+
 const button = document.getElementById("confirm");
 const playerBox = document.getElementsByClassName("player-box");
 const roundBox = document.getElementsByClassName("round");
@@ -16,6 +22,7 @@ let currentTurn = 0;
 
 socket.on('updatePlayers',(backendPlayers) => {
   players = [...backendPlayers];
+  console.log(players);
 })
 
 socket.on("ready", () => {

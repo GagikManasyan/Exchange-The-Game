@@ -209,9 +209,7 @@ body {
         background-image: url(../images/background.jpg);
         background-size: cover;
         background-repeat: repeat;
-    }
-    .wrapper {
-        width: 100%;
+        transform: scale(1.1);
     }
     .head-title {
         height: 45px;

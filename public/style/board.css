@@ -2,6 +2,7 @@ html {
     perspective: 20rem;
 }
 body {
+    overflow: hidden;
     background-image: url(../images/background.jpg);
     background-position: center;
     transform: scale(1) rotateX(5deg); 

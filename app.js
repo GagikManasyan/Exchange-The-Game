@@ -134,11 +134,9 @@ io.on("connection", (socket) => {
         );
         const removedPlayer = rooms[room].players.splice(index, 1)[0];
         io.to(removedPlayer.room).emit("updatePlayers", rooms[room].players);
+        delete rooms[room];
+        io.to(room).emit("redirectToIndex");
       }
-      const removedPlayer = rooms[room].players.splice(index, 1)[0];
-      io.to(removedPlayer.room).emit("updatePlayers", rooms[room].players);
-      delete rooms[room];
-      io.to(room).emit("redirectToIndex");
     }
   });
 

@@ -208,8 +208,8 @@ body {
     border-radius: 5px;
 }
 @media screen and (max-width: 1115px) and (min-width: 350px) {
-    ::-webkit-scrollbar {
-        -webkit-appearance: none;
+    html {
+        background-image: url(../images/background.jpg);
     }
     body {
         background-image: url(../images/background.jpg);

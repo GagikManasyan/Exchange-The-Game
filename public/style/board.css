@@ -209,7 +209,8 @@ body {
         perspective: none;
     }
     body {
-        background-color: red;
+        background-size: cover;
+        background-repeat: repeat;
         margin: 0;
         padding: 0;
         transform: none; 

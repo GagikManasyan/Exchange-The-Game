@@ -347,6 +347,12 @@ body {
 }
 
 @media screen and (max-width: 1115px) and (min-width: 350px) {
+    .wrapper {
+        perspective: none;
+    }
+    .game {
+        transform: none;
+    }
     .head-title {
         height: 45px;
         font-size: 20px;

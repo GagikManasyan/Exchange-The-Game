@@ -8,12 +8,8 @@ socket.on("roomFull", () => {
   window.alert("The room is already full. You cannot join at the moment.");
 });
 
-function redirect() {
-  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
-}
-
 socket.on("redirectToIndex", () => {
-  redirect();
+  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
 });
 
 const button = document.getElementById("confirm");
@@ -129,14 +125,17 @@ socket.on("roundCounter", (roundCount) => {
   roundBox[roundCount].style.borderBottomColor = "red";
 });
 
-socket.on("gameOver", (winner) => {
+socket.on("gameOver", (backendPlayers) => {
+  let players = [...backendPlayers].sort((a,b) => a.money - b.money);
   let result = '';
-  if(winner.length > 1) {
-    result = `Game Over! The winner is ${winner[0].name} with $${winner[0].money}.`;
+  if (players[0].money === players[1].money && players[0].money === players[2].money) {
+    result = "Game Over! The game ends in a tie.";
+  } else if (players[0].money === players[1].money) {
+    result = `Game Over! The game ends in a tie. The winners are ${players[0].name} and ${players[1].name}.`;
   } else {
-    result = 'The game ends with a tie'
+    result = `Game Over! The winner is ${players[0].name}.`;
   }
   window.alert(result);
   button.removeEventListener("click", selectPhases);
-  redirect();
+  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
 });

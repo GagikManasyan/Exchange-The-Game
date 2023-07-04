@@ -221,18 +221,7 @@ function buySell(room) {
 }
 
 function gameOver(room) {
-  let maxMoney = 0;
-  let winner = [];
-  const players = rooms[room].players;
-  for (let i = 0; i < players.length; i++) {
-    let player = players[i];
-    let money = player.getMoney();
-    if (money >= maxMoney) {
-      maxMoney = money;
-      winner.push(player);
-    } 
-  }
-  io.to(room).emit("gameOver", winner);
+  io.to(room).emit("gameOver", rooms[room].players);
 }
 
 function roundCounter(room) {

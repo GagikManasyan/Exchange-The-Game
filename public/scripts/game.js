@@ -130,7 +130,7 @@ socket.on("roundCounter", (roundCount) => {
 });
 
 socket.on("gameOver", (winner) => {
-  const result = '';
+  let result = '';
   if(winner.length > 1) {
     result = `Game Over! The winner is ${winner[0].name} with $${winner[0].money}.`;
   } else {

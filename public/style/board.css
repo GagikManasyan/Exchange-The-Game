@@ -1,6 +1,6 @@
 body {
     position: relative;
-    background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(20,20,20,1) 50%, rgba(0,0,0,1) 95%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 5%, rgba(20, 20, 20, 1) 50%, rgba(0, 0, 0, 1) 95%);
     overflow: hidden;
 }
 
@@ -75,7 +75,7 @@ body {
     flex-direction: column;
     width: 150px;
     height: 80px;
-    background: linear-gradient(90deg, rgb(17 17 17) 50%, rgba(30,30,30,1) 85%);
+    background: linear-gradient(90deg, rgb(17 17 17) 50%, rgba(30, 30, 30, 1) 85%);
 }
 
 .player-active {
@@ -221,7 +221,6 @@ body {
 }
 
 .rates {
-    position: relative;
     display: flex;
 }
 
@@ -251,16 +250,18 @@ body {
 }
 
 .grid-rate {
+    position: relative;
+    flex: 0 0 auto;
+    max-width: 95px;
+    min-width: 95px;
+    height: 250px;
     box-sizing: border-box;
     border: 1px solid #43c114;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95px;
-    height: 250px;
     font-size: 45px;
     color: #fff;
-
 }
 
 .round-counter {
@@ -350,13 +351,15 @@ body {
     body {
         background-color: black;
     }
+
     .head-title {
         height: 45px;
         font-size: 20px;
     }
 
     .grid-rate {
-        width: 70px;
+        max-width: 70px;
+        min-width: 70px;
         height: 180px;
         font-size: 25px;
     }

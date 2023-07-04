@@ -82,15 +82,13 @@ function selectPhases() {
 }
 
 socket.on("adjustMarket", (market) => {
-  let coordinateRed = market.red * 10 + 15 - 100;
-  let coordinateGreen = market.green * 10 + 15 - 100;
-  let coordinateBlue = market.blue * 10 + 15 - 100;
-  const redRate = document.querySelector(".red-rate");
-  const greenRate = document.querySelector(".green-rate");
-  const blueRate = document.querySelector(".blue-rate");
-  redRate.style.transform = `translate(${coordinateRed}px)`;
-  greenRate.style.transform = `translate(${coordinateGreen}px)`;
-  blueRate.style.transform = `translate(${coordinateBlue}px)`;
+  const rateGrid = document.querySelectorAll('.grid-rate');
+  const redRate = document.querySelector('.red-rate');
+  const greenRate = document.querySelector('.green-rate');
+  const blueRate = document.querySelector('.blue-rate');
+  rateGrid[(market.red - 10) / 10].appendChild(redRate);
+  rateGrid[(market.green - 10) / 10].appendChild(greenRate);
+  rateGrid[(market.blue - 10) / 10].appendChild(blueRate);
 });
 
 socket.on("updatePlayerStats", (backendPlayers) => {

@@ -222,15 +222,15 @@ function buySell(room) {
 
 function gameOver(room) {
   let maxMoney = 0;
-  let winner = null;
+  let winner = [];
   const players = rooms[room].players;
   for (let i = 0; i < players.length; i++) {
     let player = players[i];
     let money = player.getMoney();
-    if (money > maxMoney) {
+    if (money >= maxMoney) {
       maxMoney = money;
-      winner = player;
-    }
+      winner.push(player);
+    } 
   }
   io.to(room).emit("gameOver", winner);
 }

@@ -130,7 +130,12 @@ socket.on("roundCounter", (roundCount) => {
 });
 
 socket.on("gameOver", (winner) => {
-  const result = `Game Over! The winner is ${winner.name} with $${winner.money}.`;
+  const result = '';
+  if(winner.length > 1) {
+    result = `Game Over! The winner is ${winner[0].name} with $${winner[0].money}.`;
+  } else {
+    result = 'The game ends with a tie'
+  }
   window.alert(result);
   button.removeEventListener("click", selectPhases);
   redirect();

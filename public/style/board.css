@@ -1,8 +1,5 @@
 body {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(20,20,20,1) 50%, rgba(0,0,0,1) 95%);
     overflow: hidden;
 }
@@ -66,7 +63,7 @@ body {
 .players {
     margin: 10px 0px 20px 0px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .player-box {

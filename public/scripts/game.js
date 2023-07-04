@@ -103,14 +103,12 @@ socket.on("updatePlayerStats", (backendPlayers) => {
 socket.on("showPhases", (phases) => {
   const phasebox = document.getElementsByClassName("showPhases");
   for (let i = 0; i < phasebox.length; i++) {
-    let showPhase = phasebox[i].querySelectorAll(".showPhase");
-    showPhase[0].querySelector(
-      "span"
-    ).innerText = `${phases[i].phase2.action} ${phases[i].phase1.property} ${phases[i].phase2.amount}`;
-    showPhase[1].querySelector(
-      "span"
-    ).innerText = `${phases[i].phase3.influencedProperty} ${phases[i].phase3.influence}`;
-    phasebox[i].style.visibility = "visible";
+    const showPhase = phasebox[i].querySelectorAll('.showPhase');
+    showPhase[0].querySelector('.rate-box').style.backgroundColor = phases[i].phase1.property;
+    showPhase[1].querySelector('span').innerText = `${phases[i].phase2.action} ${phases[i].phase2.amount}`;
+    showPhase[2].querySelector('.rate-box').style.backgroundColor = phases[i].phase3.influencedProperty;
+    showPhase[2].querySelector('span').innerText = `${phases[i].phase3.influence}`;
+    phasebox[i].style.visibility = 'visible';
   }
 });
 

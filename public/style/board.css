@@ -1,14 +1,9 @@
-html {
-    perspective: 20rem;
-}
-
 body {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(20, 20, 20);
-    transform: scale(1) rotateX(5deg);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 5%, rgba(20,20,20,1) 50%, rgba(0,0,0,1) 95%);
     overflow: hidden;
 }
 
@@ -63,26 +58,27 @@ body {
 /* WRAPPER */
 #wrapper {
     visibility: hidden;
+    perspective: 20rem;
     padding: 5px;
 }
 
 /* TOP-PLAYERS */
 .players {
-    margin: 0px 0px 20px 0px;
+    margin: 10px 0px 20px 0px;
     display: flex;
     justify-content: space-between;
 }
 
 .player-box {
     position: relative;
-    border: 1px solid darkblue;
+    border: 1px solid #04243c;
     border-top: none;
     border-bottom-right-radius: 5px;
     display: flex;
     flex-direction: column;
     width: 150px;
     height: 80px;
-    background-color: rgb(51, 51, 51);
+    background: linear-gradient(90deg, rgb(17 17 17) 50%, rgba(30,30,30,1) 85%);
 }
 
 .player-active {
@@ -90,15 +86,15 @@ body {
 }
 
 .name-bar {
-    border-top: 1px solid gold;
-    border-bottom: 1px solid gold;
+    border-top: 1px solid #ffe066;
+    border-bottom: 1px solid #ffe066;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     display: flex;
     align-items: center;
     width: 170px;
     height: 30px;
-    background-color: rgb(50, 105, 0);
+    background-color: #00471e;
     box-shadow: 0px 3px 7px;
 }
 
@@ -135,27 +131,49 @@ body {
     display: flex;
     position: absolute;
     left: 5px;
-    top: 100%;
+    top: 101%;
     font-size: 15px;
     color: white;
 }
 
 .showPhase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 1.5px;
-    background-color: black;
-    border: 1px solid white;
+    background-color: #000000;
+    min-width: 40px;
+    height: 20px;
+    text-align: center;
+}
+
+.showPhase span {
+    font-size: 15px;
+}
+
+.rate-box {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.phase-3-span {
+    margin-left: 5px;
 }
 
 .player-stats ul li:nth-child(1) {
-    background-color: red;
+    background-color: #ff1e1e;
 }
 
 .player-stats ul li:nth-child(2) {
-    background-color: green;
+    background-color: #008e00;
 }
 
 .player-stats ul li:nth-child(3) {
-    background-color: blue;
+    background-color: #00008e;
 }
 
 .player-money {
@@ -178,10 +196,12 @@ body {
 }
 
 .game {
+    padding-top: 10px;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: flex-start;
+    transform: scale(1) rotateX(5deg);
 }
 
 .head-title {
@@ -216,26 +236,26 @@ body {
 }
 
 .red-rate {
-    background-color: red;
+    background-color: #ff1e1e;
     top: 10%;
     left: 15px;
 }
 
 .green-rate {
-    background-color: green;
+    background-color: #008e00;
     top: 20%;
     left: 15px;
 }
 
 .blue-rate {
-    background-color: blue;
+    background-color: #00008e;
     top: 30%;
     left: 15px;
 }
 
 .grid-rate {
     box-sizing: border-box;
-    border: 1px solid white;
+    border: 1px solid #43c114;
     display: flex;
     align-items: center;
     justify-content: center;

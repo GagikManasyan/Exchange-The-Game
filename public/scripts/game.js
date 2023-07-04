@@ -8,8 +8,12 @@ socket.on("roomFull", () => {
   window.alert("The room is already full. You cannot join at the moment.");
 });
 
-socket.on("redirectToIndex", () => {
+function redirect() {
   window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
+}
+
+socket.on("redirectToIndex", () => {
+  redirect();
 });
 
 const button = document.getElementById("confirm");
@@ -129,4 +133,5 @@ socket.on("gameOver", (winner) => {
   const result = `Game Over! The winner is ${winner.name} with $${winner.money}.`;
   window.alert(result);
   button.removeEventListener("click", selectPhases);
+  redirect();
 });

@@ -350,12 +350,6 @@ body {
     body {
         background-color: black;
     }
-    #wrapper {
-        perspective: none;
-    }
-    .game {
-        transform: none;
-    }
     .head-title {
         height: 45px;
         font-size: 20px;

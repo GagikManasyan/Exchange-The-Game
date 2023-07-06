@@ -9,11 +9,11 @@
 </head>
 <body>
   <audio id="myAudio" src="sounds/start.mp3"></audio>
-  <div id="loader-layer">
+  <div id="loader-layer" class="layer">
     <span>WAITING FOR <br> OTHER PLAYERS</span>
     <div class="loader"></div>
   </div>
-  <div id="game-over-layer">
+  <div id="game-over-layer" class="layer">
     <div id="game-over-pop">
       <div class="game-over-header">
         <h1>Game Over</h1>
@@ -34,7 +34,12 @@
       </button>
     </div>
   </div>
-  
+  <div id="even-card" class="layer">
+    <div class="card">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
   <div id="wrapper">
     <div class="top">
       <div class="players">

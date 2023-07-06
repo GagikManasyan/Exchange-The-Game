@@ -4,18 +4,8 @@ body {
     overflow: hidden;
 }
 
-#loader-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: none;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-#game-over-layer {
-    display: none;
+.layer {
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -25,6 +15,15 @@ body {
     width: 100%;
     height: 100%;
     background-color: #0000006b;
+}
+
+#loader-layer {
+    display: none;
+    flex-direction: column-reverse;
+}
+
+#game-over-layer {
+    display: none;
 }
 
 #game-over-pop {

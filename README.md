@@ -2,6 +2,7 @@
 Note:
 This online game is based on a real board game called Exchange which was designed by Eric Sillies and published by Bicycle. However there are some minor changes to the game mechanics although I tried to make the visuals similar to the original. 
 
+PLAY ONLINE AT: https://exchange-the-game-bbe8435f2af8.herokuapp.com/
 
 Introduction:
 Exchange is a stock market game where players have to carefully predict the market changes and buy/sell their properties accordingly. In order to win this game you will have to lie, manipulate, deceive and scam the other players for your own interests. You will have to throw the morality and ethical concerns right down the trash and focus only on making dollars. Basically just like real stock brokers. This game is really fun to play since it involves both thinking a few steps ahead of your opponents and challenging players to predict their own behavior. 

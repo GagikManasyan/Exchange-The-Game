@@ -108,7 +108,6 @@ body {
 
 /* WRAPPER */
 #wrapper {
-    /* visibility: hidden; */
     perspective: 20rem;
     padding: 5px;
 }

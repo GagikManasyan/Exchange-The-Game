@@ -37,7 +37,6 @@ function backToLobby() {
 }
 
 function start() {
-  wrapper.setAttribute("style", "visibility: visible");
   loading.style.display = "none";
   btn.style.display = "block";
   button.addEventListener("click", selectPhases);

@@ -91,38 +91,37 @@ shuffleCards();
 
 io.on("connection", (socket) => {
   socket.on("joinRoom", (username, userRoom) => {
-    if (rooms[userRoom] && rooms[userRoom].players.length >= 3) {
-      socket.emit("roomFull");
-    } else {
-      let player = new Player(
-        cards[cardAssign++],
-        username,
-        socket.id,
-        userRoom
-      );
-      if (!rooms[player.room]) {
-        rooms[player.room] = {
-          players: [],
-          playerPhases: [],
-          market: {
-            red: 10,
-            green: 10,
-            blue: 10,
-          },
-          currentTurn: 0,
-          roundCount: 0,
-        };
+    if(rooms.hasOwnProperty(userRoom)) {
+      if(rooms[userRoom].players.length >= 3) {
+        socket.emit("roomFull");
+      } else {
+        let player = new Player(cards[cardAssign++],username,socket.id,userRoom);
+        rooms[player.room].players.push(player);
+        socket.join(player.room);
+        console.log(`user ${player.name} joined the ${player.room}`);
+        io.to(player.room).emit("updatePlayers", rooms[player.room].players);
+        if (isReady(player.room)) {
+          io.to(player.room).emit("ready");
+        }
       }
+    } else {
+      let player = new Player(cards[cardAssign++],username,socket.id,userRoom);
+      rooms[player.room] = {
+        players: [],
+        playerPhases: [],
+        market: {
+          red: 10,
+          green: 10,
+          blue: 10,
+        },
+        currentTurn: 0,
+        roundCount: 0,
+      };
       rooms[player.room].players.push(player);
       socket.join(player.room);
-      console.log(`user ${player.name} joined the ${player.room}`);
-      io.to(player.room).emit("updatePlayers", rooms[player.room].players);
-      if (isReady(player.room)) {
-        io.to(player.room).emit("ready");
-      }
+      console.log(`user ${player.name} created the ${player.room}`);
     }
   });
-
   socket.on("disconnect", (reason) => {
     for (let room in rooms) {
       const index = rooms[room].players.findIndex(
@@ -132,19 +131,25 @@ io.on("connection", (socket) => {
         console.log(
           `${rooms[room].players[index].name} is leaving the room ${reason}`
         );
-        const removedPlayer = rooms[room].players.splice(index, 1)[0];
-        io.to(removedPlayer.room).emit("updatePlayers", rooms[room].players);
-        delete rooms[room];
-        io.to(room).emit("redirectToIndex");
+        rooms[room].players.splice(index,1)[0];
+        io.to(room).emit('updatePlayers',rooms[room].players);
+        gameOver(room);
+        if(isEmpty(room)) {
+          `${room} deleted`
+          delete rooms[room];
+        }
       }
     }
   });
-
   socket.on("buttonClick", (playerRoom, playerPhase) => {
     rooms[playerRoom].playerPhases.push(playerPhase);
     changeTurn(playerRoom);
   });
 });
+
+function isEmpty(room) {
+  return (rooms[room].players.length === 0 ? true : false);
+}
 
 function shuffleCards() {
   for (let i = cards.length - 1; i > 0; i--) {
@@ -221,7 +226,7 @@ function buySell(room) {
 }
 
 function gameOver(room) {
-  io.to(room).emit("gameOver", rooms[room].players);
+  io.to(room).emit("gameOver");
 }
 
 function roundCounter(room) {

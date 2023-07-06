@@ -2,14 +2,16 @@ const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 const socket = io();
+
 socket.emit("joinRoom", username, room);
 
 socket.on("roomFull", () => {
   window.alert("The room is already full. You cannot join at the moment.");
+  backToLobby();
 });
 
 socket.on("redirectToIndex", () => {
-  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
+  backToLobby();
 });
 
 const button = document.getElementById("confirm");
@@ -29,6 +31,10 @@ socket.on("updatePlayers", (backendPlayers) => {
 socket.on("ready", () => {
   start();
 });
+
+function backToLobby() {
+  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
+}
 
 function start() {
   wrapper.setAttribute("style", "visibility: visible");
@@ -125,17 +131,14 @@ socket.on("roundCounter", (roundCount) => {
   roundBox[roundCount].style.borderBottomColor = "red";
 });
 
-socket.on("gameOver", (backendPlayers) => {
-  let players = [...backendPlayers].sort((a,b) => a.money - b.money);
-  let result = '';
-  if (players[0].money === players[1].money && players[0].money === players[2].money) {
-    result = "Game Over! The game ends in a tie.";
-  } else if (players[0].money === players[1].money) {
-    result = `Game Over! The game ends in a tie. The winners are ${players[0].name} and ${players[1].name}.`;
-  } else {
-    result = `Game Over! The winner is ${players[0].name}.`;
-  }
-  window.alert(result);
-  button.removeEventListener("click", selectPhases);
-  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
+socket.on("gameOver", () => {
+  let sortedPlayers = [...players].sort((a,b) => b.money - a.money);
+  const gameOverLayer = document.getElementById('game-over-layer');
+  const gameOver = document.querySelector('.game-over-text').querySelectorAll('span');
+  const redirect = document.getElementById('back-to-lobby');
+  gameOverLayer.style.display = 'flex';
+  gameOver[0].innerText = sortedPlayers[0] ? ` 1: ${sortedPlayers[0].name} ${sortedPlayers[0].money} $` : '';
+  gameOver[1].innerText = sortedPlayers[1] ? ` 2: ${sortedPlayers[1].name} ${sortedPlayers[1].money} $` : '';
+  gameOver[2].innerText = sortedPlayers[2] ? ` 3: ${sortedPlayers[2].name} ${sortedPlayers[2].money} $` : '';
+  redirect.addEventListener("click", backToLobby);
 });

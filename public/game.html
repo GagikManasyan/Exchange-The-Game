@@ -13,6 +13,28 @@
     <span>WAITING FOR <br> OTHER PLAYERS</span>
     <div class="loader"></div>
   </div>
+  <div id="game-over-layer">
+    <div id="game-over-pop">
+      <div class="game-over-header">
+        <h1>Game Over</h1>
+      </div>
+      <div class="game-over-text">
+        <div class="player-result">
+          <i class="fas fa-star" style="color:gold;"></i><span>1:</span>
+        </div>
+        <div class="player-result">
+          <i class="fas fa-star" style="color:#CD7F32"></i><span>2:</span>
+        </div>
+        <div class="player-result">
+          <i class="fas fa-star" style="color:silver"></i><span>3:</span>
+        </div>
+      </div>
+      <button id="back-to-lobby">
+        Back To Lobby
+      </button>
+    </div>
+  </div>
+  
   <div id="wrapper">
     <div class="top">
       <div class="players">
@@ -229,6 +251,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.2/qs.min.js" integrity="sha512-vCegEXqPUYpZsTGz2lk0jaQ1psxtFeniVJACAXhMVxuoYa/N4nZkjoVFOxLwP7uGeQOoemiz7DQrIpRTj4IBPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  <script src="https://kit.fontawesome.com/6673124f42.js" crossorigin="anonymous"></script>
   <script type="module" src="scripts/game.js"></script>
 </body>
 </html>

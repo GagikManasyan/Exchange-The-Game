@@ -8,21 +8,6 @@ class Player {
         this.green = card.green;
         this.blue = card.blue;
     }
-    getName() {
-        return this.name;
-    }
-    getMoney () {
-        return this.money;
-    }
-    getRed () {
-        return this.red;
-    }
-    getGreen () {
-        return this.green;
-    }
-    getBlue () {
-        return this.blue;
-    }
     addMoney(amount) {
         this.money += amount;
     }

@@ -45,10 +45,10 @@ function start() {
   roundBox[0].style.borderBottomColor = "red";
   const audio = document.getElementById("myAudio");
   audio.play();
-  updatesPlayersInfo();
+  updatePlayersInfo();
 }
 
-function updatesPlayersInfo() {
+function updatePlayersInfo() {
   for (let i = 0; i < playerBox.length; i++) {
     let playerNameBar = playerBox[i].querySelector(".name-bar");
     let playerStats = playerBox[i].querySelector(".player-stats");
@@ -101,7 +101,7 @@ socket.on("updatePlayerStats", (backendPlayers) => {
   for (let i = 0; i < backendPlayers.length; i++) {
     players[i] = backendPlayers[i];
   }
-  updatesPlayersInfo();
+  updatePlayersInfo();
 });
 
 socket.on("showPhases", (phases) => {

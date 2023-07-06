@@ -17,7 +17,7 @@ Choose the influence on the market.
 
 Basically, if you want to buy a property then it makes sense to lower its value since you want to get it at the cheapest price possible. However, there are some nuances. The market influence will be decided after all 3 players have picked their phases. This means you have to pick your market influence by predicting what other players will choose. Carefully analyze the current market rates and the possessions of your opponents properties. If someone has a lot of red then you can safely assume that sooner or later they will decide to sell them. Thus it is better to keep the market rate at a lower price. If the market rate of a property is set at 10$ and you choose the influence of -1 then it jumps up all the way to 90$. Same logic works the other way around, meaning if the market rate is set at 90$ and you choose +1 then it will get down to 10$. This is probably the best mechanic of the game since it allows you to manipulate your opponents and totally screw up all their plans. However, you have to be careful since you can get caught in a similar trap. After 5 rounds the player with the most money will win. So, get your best wall street suit, hop into the game and destroy your competitors to become the richest scumbag stock broker in wall street. 
 
-![gameBoard](https://drive.google.com/file/d/1cjQeH9c1SCk9c3xEAuWZ0jzgZZCgmD3N/view?usp=sharing)
+![Screenshot 2023-07-06 192328](https://github.com/GagikManasyan/Exchange-The-Game/assets/82650469/a69303b7-b02b-4b69-bbe1-8cd29750873a)
 
 
 

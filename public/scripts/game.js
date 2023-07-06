@@ -53,7 +53,7 @@ function updatePlayersInfo() {
     let playerStats = playerBox[i].querySelector(".player-stats");
     let playerProperties = playerBox[i].querySelectorAll("li");
     playerNameBar.querySelector("span").innerText = players[i].name;
-    playerStats.querySelector(".player-money").innerText = players[i].money;
+    playerStats.querySelector(".player-money").innerText = `${players[i].money}$`;
     playerProperties[0].querySelector("span").innerText = players[i].red;
     playerProperties[1].querySelector("span").innerText = players[i].green;
     playerProperties[2].querySelector("span").innerText = players[i].blue;

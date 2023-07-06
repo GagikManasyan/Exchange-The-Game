@@ -33,7 +33,7 @@ socket.on("ready", () => {
 });
 
 function backToLobby() {
-  window.location.href = "https://exchange-the-game-bbe8435f2af8.herokuapp.com";
+  window.location.href = "https://www.exchangethegame.org";
 }
 
 function start() {

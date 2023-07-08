@@ -18,6 +18,8 @@ In this phase, you'll decide whether to buy or sell the chosen property and spec
 Phase 3:<br>
 -Choose the influence on the market.<br>
 Probably the most important phase of the game. In Phase 3, you get to choose how you want to influence the rate of your selected property. If you choose the influence rate of +1 then the property rate will increase by 10$ and -1 will decrease by 10$. However, if the rate hits rock bottom at 10$ and you chose the influence of -1, it'll skyrocket to 90$. If it's 90$ and you chose the influence of +1, then it will crash down to 10$. This is simply the best mechanic of this game since you can abuse it to bankrupt other players and make massive profits. Just remember, the order of player turns determines when each Phase 3 action takes effect, so plan your moves wisely!
+
+
 With Exchange, you'll experience the thrill of outsmarting your opponents, predicting their economic behavior, and executing diabolical plans to secure your financial supremacy. It's a game that combines strategic thinking, cunning calculations, and dominating victory while’s laughing hilariously at your opponents. So wake your inner broker and have fun !
 
 

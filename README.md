@@ -1,5 +1,4 @@
-![image](https://github.com/GagikManasyan/Exchange-The-Game/assets/82650469/109a025c-4d51-4025-8929-48772452de68)# Exchange-The-Game
-Note:
+Note:<br>
 This online game is based on a real board game called Exchange which was designed by Eric Sillies and published by Bicycle. However there are some minor changes to the game mechanics although I tried to make the visuals similar to the original. 
 
 PLAY ONLINE AT: [www.exchangethegame.org](https://www.exchangethegame.org/)

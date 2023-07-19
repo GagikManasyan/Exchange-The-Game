@@ -135,7 +135,6 @@ io.on("connection", (socket) => {
         io.to(room).emit('updatePlayers',rooms[room].players);
         gameOver(room);
         if(isEmpty(room)) {
-          `${room} deleted`
           delete rooms[room];
         }
       }

@@ -147,10 +147,6 @@ io.on("connection", (socket) => {
   });
 });
 
-function isEmpty(room) {
-  return rooms[room].players.length === 0 ? true : false;
-}
-
 function shuffleCards() {
   for (let i = cards.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));

@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/fonts.css" />
+    <link rel="stylesheet" href="style/room.css" />
+    <title>Exchange Room</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style/reset.css"/>
-  <link rel="stylesheet" href="style/fonts.css">
-  <link rel="stylesheet" href="style/room.css"/>
-  <title>Exchange Room</title>
-</head>
-
-<body>
-  <div class="join-container">
-    <header class="join-header">
-      <h1>Exchange The Game</h1>
-    </header>
-    <main class="join-main">
-      <form action="game.html">
-        <div class="form-control">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Enter username..."
-            required
-          />
-        </div>
-        <div class="form-control">
-          <label for="room">Room</label>
-          <input
-            type="text"
-            name="room"
-            id="room"
-            placeholder="Enter Room..."
-            required
-          />
-        </div>
-        <button type="submit" id="btn">Join/Create</button>
-      </form>
-    </main>
-  </div>
-</body>
-
+  <body>
+    <div class="join-container">
+      <header class="join-header">
+        <h1>Exchange The Game</h1>
+      </header>
+      <main class="join-main">
+        <form action="game.html">
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter username..."
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="room">Room</label>
+            <input
+              type="text"
+              name="room"
+              id="room"
+              placeholder="Enter Room..."
+              required
+            />
+          </div>
+          <button type="submit" id="btn">Join/Create</button>
+        </form>
+      </main>
+    </div>
+  </body>
 </html>

@@ -91,21 +91,30 @@ shuffleCards();
 
 io.on("connection", (socket) => {
   socket.on("joinRoom", (username, userRoom) => {
-    if(rooms.hasOwnProperty(userRoom)) {
-      if(rooms[userRoom].players.length >= 3) {
+    if (rooms.hasOwnProperty(userRoom)) {
+      if (rooms[userRoom].players.length >= 3) {
         socket.emit("roomFull");
       } else {
-        let player = new Player(cards[cardAssign++],username,socket.id,userRoom);
+        let player = new Player(
+          cards[cardAssign++],
+          username,
+          socket.id,
+          userRoom
+        );
         rooms[player.room].players.push(player);
         socket.join(player.room);
-        console.log(`user ${player.name} joined the ${player.room}`);
         io.to(player.room).emit("updatePlayers", rooms[player.room].players);
         if (isReady(player.room)) {
           io.to(player.room).emit("ready");
         }
       }
     } else {
-      let player = new Player(cards[cardAssign++],username,socket.id,userRoom);
+      let player = new Player(
+        cards[cardAssign++],
+        username,
+        socket.id,
+        userRoom
+      );
       rooms[player.room] = {
         players: [],
         playerPhases: [],
@@ -119,24 +128,16 @@ io.on("connection", (socket) => {
       };
       rooms[player.room].players.push(player);
       socket.join(player.room);
-      console.log(`user ${player.name} created the ${player.room}`);
     }
   });
-  socket.on("disconnect", (reason) => {
+  socket.on("disconnect", () => {
     for (let room in rooms) {
       const index = rooms[room].players.findIndex(
         (player) => player.id === socket.id
       );
       if (index !== -1) {
-        console.log(
-          `${rooms[room].players[index].name} is leaving the room ${reason}`
-        );
-        rooms[room].players.splice(index,1)[0];
-        io.to(room).emit('updatePlayers',rooms[room].players);
-        gameOver(room);
-        if(isEmpty(room)) {
-          delete rooms[room];
-        }
+        io.emit("sessionOver");
+        delete rooms[room];
       }
     }
   });
@@ -147,7 +148,7 @@ io.on("connection", (socket) => {
 });
 
 function isEmpty(room) {
-  return (rooms[room].players.length === 0 ? true : false);
+  return rooms[room].players.length === 0 ? true : false;
 }
 
 function shuffleCards() {

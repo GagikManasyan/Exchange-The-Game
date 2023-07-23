@@ -53,7 +53,9 @@ function updatePlayersInfo() {
     let playerStats = playerBox[i].querySelector(".player-stats");
     let playerProperties = playerBox[i].querySelectorAll("li");
     playerNameBar.querySelector("span").innerText = players[i].name;
-    playerStats.querySelector(".player-money").innerText = `${players[i].money}$`;
+    playerStats.querySelector(
+      ".player-money"
+    ).innerText = `${players[i].money}$`;
     playerProperties[0].querySelector("span").innerText = players[i].red;
     playerProperties[1].querySelector("span").innerText = players[i].green;
     playerProperties[2].querySelector("span").innerText = players[i].blue;
@@ -87,10 +89,10 @@ function selectPhases() {
 }
 
 socket.on("adjustMarket", (market) => {
-  const rateGrid = document.querySelectorAll('.grid-rate');
-  const redRate = document.querySelector('.red-rate');
-  const greenRate = document.querySelector('.green-rate');
-  const blueRate = document.querySelector('.blue-rate');
+  const rateGrid = document.querySelectorAll(".grid-rate");
+  const redRate = document.querySelector(".red-rate");
+  const greenRate = document.querySelector(".green-rate");
+  const blueRate = document.querySelector(".blue-rate");
   rateGrid[(market.red - 10) / 10].appendChild(redRate);
   rateGrid[(market.green - 10) / 10].appendChild(greenRate);
   rateGrid[(market.blue - 10) / 10].appendChild(blueRate);
@@ -106,12 +108,18 @@ socket.on("updatePlayerStats", (backendPlayers) => {
 socket.on("showPhases", (phases) => {
   const phasebox = document.getElementsByClassName("showPhases");
   for (let i = 0; i < phasebox.length; i++) {
-    const showPhase = phasebox[i].querySelectorAll('.showPhase');
-    showPhase[0].querySelector('.rate-box').style.backgroundColor = phases[i].phase1.property;
-    showPhase[1].querySelector('span').innerText = `${phases[i].phase2.action} ${phases[i].phase2.amount}`;
-    showPhase[2].querySelector('.rate-box').style.backgroundColor = phases[i].phase3.influencedProperty;
-    showPhase[2].querySelector('span').innerText = `${phases[i].phase3.influence}`;
-    phasebox[i].style.visibility = 'visible';
+    const showPhase = phasebox[i].querySelectorAll(".showPhase");
+    showPhase[0].querySelector(".rate-box").style.backgroundColor =
+      phases[i].phase1.property;
+    showPhase[1].querySelector(
+      "span"
+    ).innerText = `${phases[i].phase2.action} ${phases[i].phase2.amount}`;
+    showPhase[2].querySelector(".rate-box").style.backgroundColor =
+      phases[i].phase3.influencedProperty;
+    showPhase[2].querySelector(
+      "span"
+    ).innerText = `${phases[i].phase3.influence}`;
+    phasebox[i].style.visibility = "visible";
   }
 });
 
@@ -131,13 +139,25 @@ socket.on("roundCounter", (roundCount) => {
 });
 
 socket.on("gameOver", () => {
-  let sortedPlayers = [...players].sort((a,b) => b.money - a.money);
-  const gameOverLayer = document.getElementById('game-over-layer');
-  const gameOver = document.querySelector('.game-over-text').querySelectorAll('span');
-  const redirect = document.getElementById('back-to-lobby');
-  gameOverLayer.style.display = 'flex';
-  gameOver[0].innerText = sortedPlayers[0] ? ` 1: ${sortedPlayers[0].name} ${sortedPlayers[0].money} $` : '';
-  gameOver[1].innerText = sortedPlayers[1] ? ` 2: ${sortedPlayers[1].name} ${sortedPlayers[1].money} $` : '';
-  gameOver[2].innerText = sortedPlayers[2] ? ` 3: ${sortedPlayers[2].name} ${sortedPlayers[2].money} $` : '';
+  let sortedPlayers = [...players].sort((a, b) => b.money - a.money);
+  const gameOverLayer = document.getElementById("game-over-layer");
+  const gameOver = document
+    .querySelector(".game-over-text")
+    .querySelectorAll("span");
+  const redirect = document.getElementById("back-to-lobby");
+  gameOverLayer.style.display = "flex";
+  gameOver[0].innerText = sortedPlayers[0]
+    ? ` 1: ${sortedPlayers[0].name} ${sortedPlayers[0].money} $`
+    : "";
+  gameOver[1].innerText = sortedPlayers[1]
+    ? ` 2: ${sortedPlayers[1].name} ${sortedPlayers[1].money} $`
+    : "";
+  gameOver[2].innerText = sortedPlayers[2]
+    ? ` 3: ${sortedPlayers[2].name} ${sortedPlayers[2].money} $`
+    : "";
   redirect.addEventListener("click", backToLobby);
+});
+
+socket.on("sessionOver", () => {
+  backToLobby();
 });
